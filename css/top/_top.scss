@@ -1,0 +1,40 @@
+@use '../base/variables' as v;
+@use '../base/mixin' as mix;
+
+
+.top-title{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    display: none;
+}
+            #link ul li .arrow{
+                font-size: 17px;
+                margin-top: 8px;
+                margin-left: 15px;
+                position: relative;
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: calc(50% - 0.5px);
+                    right: 5px;
+                    width: 9px;
+                    height: 1px;
+                    border-radius: 9999px;
+                    background-color: #0f0f0f;
+                    transform: rotate(45deg);
+                    transform-origin: calc(100% - 0.5px) 50%;
+                }
+                &::after{
+                    position: absolute;
+                    content: "";
+                    top: 50%;
+                    right: 5px;
+                    width: 60px;
+                    height: 1px;
+                    background: #000;
+                    // transition: width .3s;
+                }
+            } //arrow

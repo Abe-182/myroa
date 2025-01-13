@@ -1,0 +1,136 @@
+@use '../base/variables' as v;
+@use '../base/mixin' as mix;
+
+header{
+    font-size: 13px;
+    display: flex;
+    // height: 60px;
+    padding: 25px 0;
+    align-items: center;
+    position: relative;
+    // transition: all 0.5s;
+    @include mix.tab{
+        justify-content: center;
+        // transition: all 0.5s;
+    }
+}
+@include mix.tab{
+    header.open{
+        width: 100%;
+        position: fixed;
+        top: 0;
+        flex-direction: column-reverse;
+        z-index: 10;
+    }
+}
+#nav{
+    transition: all 0.5s;
+    @include mix.tab{
+        display: none;//非表示
+        top: 45px;
+        z-index: 10;
+    }
+    .nav-menu{
+        display: flex;
+        // padding-top: 18px;
+        // padding-bottom: 18px;
+        padding-left: 60px;
+        @include mix.tab{
+            flex-direction: column;
+            margin-top: 45px;
+            padding-left: 0;
+            text-align: center;
+        }
+        li{
+            margin-inline: 12px;
+            @include mix.tab{
+                margin-bottom: 12px;
+                font-size: 14px;
+            }
+        }
+    }//.nav-menu
+}// #nav
+@include mix.tab{
+    .open #nav{
+        display: block;//表示
+    }
+}
+.title{
+    display: none;
+    font-size: 15px;
+    @include mix.tab{
+        display: block;
+        z-index: 10;
+    }
+}
+.mask{
+    display: none;
+    width: 100%;
+    height: 100vh;
+    background-color: v.$main-color;
+    transition: all 0.5s;    
+}
+@include mix.tab{
+    .open .mask{
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        cursor: pointer;
+    }
+}
+/* ハンバーガーメニューボタン */
+.toggle_btn {
+    display: none;
+    width: 40px;
+    height: 12px;
+    /*基準*/
+    position: absolute; 
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    /* 0.5秒かけて変化させる */
+    transition: all 0.5s;
+    cursor: pointer;
+    z-index: 10;
+    @include mix.tab{
+        display: block;
+    }
+}
+.open .toggle_btn {
+    @include mix.tab{
+        top: 15%;
+        transform: translateY(0);
+    }
+}
+/*ハンバーガーメニューの線の設定（メニューが閉じている時）*/
+.toggle_btn span {
+      /* spanはインライン要素のため */
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: v.$font-color;
+    transition: all 0.5s;
+    /*対象*/
+    position: absolute; 
+}
+    /*1本目の線の位置を設定*/
+    .toggle_btn span:nth-child(1) {
+    top: 0%;
+    }
+    /*2本目の線の位置を設定 */
+    .toggle_btn span:nth-child(2) {
+    // top: 50%;
+    bottom: 0;
+    }
+    /* 1本目の線を-45度回転transformで線のど真ん中の点を中心に動く*/
+    .open .toggle_btn span:nth-child(1) {
+    transform: translateY(-6px) rotate(-45deg);
+    top: 50%;
+    }
+    /*2本目の線を（45度回転）透過*/
+    .open .toggle_btn span:nth-child(2){
+        transform: translateY(-6px) rotate(45deg) ;
+        top: 50%;
+    }

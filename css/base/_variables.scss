@@ -1,0 +1,7 @@
+$main-color: #FAF7F4;
+$font-color: #0f0f0f;
+
+@mixin gradient-color {
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(250,247,244,1) 50%);
+}

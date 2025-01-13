@@ -1,0 +1,105 @@
+@use '../base/variables' as v;
+@use '../base/mixin' as mix;
+
+.about-title{ //Brand立ち上げ支援事業、生産代理店事業、会社概要
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    text-align: center;
+    @include mix.tab{
+        font-size: 45px;
+        width: 100%;
+    }
+    span{
+        display: block;
+    }
+}
+#about{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // border: 1px solid green;
+    @include mix.tab{
+        flex-direction: column;
+    }
+    .about{
+        margin-left: 7%;
+        // border: 1px solid blue;
+        @include mix.tab{
+            order: 2;
+            margin: 40px 38px 60px 38px;
+        }   
+        h2{
+            font-family: 'Poppins', sans-serif; /* Poppinsを特定の要素に適用 */
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+        dl{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            
+            dt{
+                width: 20%;
+                margin-bottom: 13px;
+                &:last-of-type{
+                    margin-bottom: 0;
+                    
+                }
+                @include mix.tab{
+                    width: 30%;
+                }
+            }
+            dd{
+                width: 80%;
+                margin-bottom: 13px;
+                &:last-of-type{
+                    margin-bottom: 0;
+                }
+                @include mix.tab{
+                    width: 70%;
+                }
+            }
+        }//dl
+    }//about
+    .about-pic{
+        display: flex;
+        justify-content: flex-end;
+        max-width: 610px;
+        width: 100%;
+        // border: 1px solid red;
+        position: relative;
+        @include mix.tab{
+            order: 1;
+            max-width: 100%;
+        }
+        .pic1{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 0;
+            max-width: 300px;
+            height: 258px;
+            object-fit: cover;
+            @include mix.tab{
+                max-width: 100%;
+                object-fit: contain;
+                left: -80px;
+                transform: translate(-55px, -50%);
+            }
+        }
+        .pic2{
+            max-width: 440px;
+            height: auto;
+            height: 430px;
+            object-fit: cover;
+            object-position: 0 50%;
+            @include mix.tab{
+                object-position: 0 7%;
+            }
+        }
+    }//about-pic
+}//about

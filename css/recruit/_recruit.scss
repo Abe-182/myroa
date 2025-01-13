@@ -1,0 +1,273 @@
+@use '../base/variables' as v;
+@use '../base/mixin' as mix;
+
+    .recruit-items{
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        // border: 1px solid red;
+        .bg-video{
+            max-width: 500px;
+            width: 100%;
+            vertical-align: bottom;
+            // border: 1px solid #000;
+            @include mix.tab{
+                max-width: 280px;
+            }
+        }
+        li img{
+            object-fit: cover;
+            width: 300px;
+            position: absolute;
+            top: 20%;
+            left: 25%;
+            @include mix.tab{
+                max-width: 240px;
+                width: 100%;
+                top: 13%;
+            }
+        }
+        .job-category{
+            position: absolute;
+            bottom: 10%;
+            right: 3%;
+            z-index: 10;
+            // border: 1px solid blue;
+            @include mix.sp{
+                display: flex;
+                justify-content: center;
+                bottom: -90px;
+                left: 0;
+            }
+            li{
+                //これ↓がなければ、レスポンシブでも「職種A」のリンクの範囲は正常になる
+                margin-bottom: 10px;
+                // border: 1px solid red;
+                @include mix.sp{
+                    margin-right: 10px;
+                    margin-left: 10px;
+                }
+                &:last-of-type{
+                    margin-bottom: 16px;
+                    @include mix.sp{
+                        margin-bottom: 0;
+                        margin-right:  0;
+                    }
+                }
+            } //li   
+        }//.job-category
+    }//.recruit-items
+    .cat-arrow{//下矢印↓を疑似要素で作成
+        position: relative;
+        left: 50%;
+        display: inline-block;
+        width: 1px;
+        height: 28px;
+        border-radius: 9999px;
+        background-color: #0f0f0f;
+    &::before, &::after{
+        content: "";
+            position: absolute;
+            bottom: 0;
+            left: calc(50% - 0.5px);
+            width: 1px;
+            height: 6px;
+            border-radius: 9999px;
+            background-color: #0f0f0f;
+            transform-origin: 50% calc(100% - 0.5px);
+    }
+    &::before {
+        transform: rotate(45deg);
+    }              
+    &::after {
+        transform: rotate(-45deg);
+    }
+    @include mix.sp{
+        display: none;
+    }
+}   
+.recruit-title{
+    color: v.$font-color;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    font-size: 80px;
+    @include mix.tab{
+        width: 100%;
+        font-size: 45px;
+        text-align: center;
+        transform: translate(-50%)
+    }
+}
+#category-a,#category-b,#category-c{
+    @include v.gradient-color;
+    // border: 1px solid red;
+    .wrapper{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 21px 30px;
+        // border: 1px solid blue;
+        @include mix.tab{
+            flex-direction: column;
+            padding: 20px 55px 60px 55px;
+        }
+        @include mix.sp{
+            padding: 40px 6% 60px 6%;
+        }
+        img{
+            max-width: 382px;
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+            margin-right: 32px;
+            @include mix.tab{
+                margin-right: 0;
+                max-width: 330px;
+            }
+        }
+        .inner{
+            @include mix.sp{
+                max-width: 330px;
+            }
+            // border: 1px solid blue;
+        .cat-font{
+            font-family: 'Poppins', sans-serif; /* Poppinsを特定の要素に適用 */
+            font-size: 42px;
+            font-weight: normal;
+            margin-bottom: 30px;
+            @include mix.tab{
+                font-size: 28px;
+                text-align: center;
+                margin-top: 12px;
+                margin-bottom: 12px;
+            }
+        }
+        .cat-items{
+            font-size: 13px;
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 395px;
+            // border: 1px solid pink;
+            dt{
+                width: 20%;
+                @include mix.sp{
+                    width: 30%;
+                }
+            }
+            dd{
+                width: 80%;
+                @include mix.sp{
+                    width: 70%;
+                }
+            }
+        }
+        }//inner
+    }//wrapper
+}//category-a,b,c
+#entry{ //recruit,about
+    background-color: v.$main-color;
+    // border: 1px solid pink;
+    h3{
+        font-weight: normal;
+        font-size: 60px;
+        text-align: center;
+        padding-top: 80px;
+        margin-bottom: 50px;
+        @include mix.tab{
+            font-size: 34px;
+        }
+    }
+    form{
+        padding-bottom: 60px;
+        .contact-list{
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto 25px auto; 
+            padding: 0 30px;
+            max-width: 560px;
+            // border: 1px solid pink;
+            dt{
+                width: 20%;
+                background-color: #fff;
+                margin-bottom: 16px;
+                // border: 1px solid pink;
+                &:last-of-type{
+                    margin-bottom: 0;
+                    display: flex;
+                    align-items: center;
+                }
+                label{
+                    background-color: #fff;
+                    line-height: 1.5;
+                    display: block;
+                    height: 100%;
+                    padding: 10px 0px 10px 15px;
+                }
+                @include mix.sp{
+                    width: 30%;
+                }
+            }
+            .textarea label{
+                height: auto;
+            }
+            dd{
+                width: 80%;
+                background-color: #fff;
+                margin-bottom: 16px;
+                // border: 1px solid pink;
+                &:last-of-type{
+                    margin-bottom: 0;
+                }
+                input{
+                    width: 100%;
+                    padding: 10px;
+                }
+                textarea{
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    padding: 10px;
+                    // border: 1px solid pink;
+                }
+                @include mix.sp{
+                    width: 70%;
+                }
+            }// dd
+        }//contact-list
+        .sub-mit{
+            text-align: center;
+            font-size: 26px;
+            @include mix.tab{
+                font-size: 21px;
+            }
+            .contact-btn{
+                position: relative;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: calc(100% + 20px);
+                    width: 36px;
+                    height: 1px;            // margin-top: 6.4px;
+                    border-radius: 9999px;
+                    background-color: v.$font-color;
+                        }
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            left: calc(100% + 48px);
+                            width: 8px;
+                            height: 1px;
+                            border-radius: 9999px;
+                            background-color: v.$font-color;
+                            transform: rotate(45deg);
+                            transform-origin: calc(100% - 0.5px) 50%;
+                        }
+            }//contact-btn  
+        }//sub-mit
+    }//form
+}//entry

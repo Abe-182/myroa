@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="jp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>タイトル</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="説明を書く">
+    <!-- ファビコン-->
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <!-- プラグイン「slick」のcssを読み込む -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+    <!-- style.css -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- googlefonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Poppins&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <section id="mainvisual" class="mainvisual">
+        <ul class="pic">
+            <li><img src="/img/MYROA - 0344.jpg" alt="壁にもたれている女性"></li>
+        </ul>
+        <h1 class="about-title"><span>会社概要</span><span>お問い合わせ</span></h1>
+    </section>
+
+    <header id="header">
+        <!-- ナビゲーション -->
+        <nav id="nav">
+            <ul class="nav-menu">
+                <li><a href="/index.html">HOME</a></li>
+                <li><a href="/work.html">Work</a></li>
+                <li><a href="/recruit.html">Recruit</a></li>
+                <li><a href="/about.html">About</a></li>
+            </ul>
+        </nav>
+        <h2 class="title">MYROA</h2>
+        <!-- 透過背景 -->
+        <div class="mask"></div>
+        <!-- ハンバーガーメニューボタン -->
+        <div class="toggle_btn">
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+        <section id="about">
+            <div class="about">
+                <h2>会社概要</h2>
+                <dl>
+                    <dt>会社名</dt>
+                    <dd>株式会社IROA</dd>
+                    <dt>所在地</dt>
+                    <dd>東京都渋谷区〇〇3丁目2-1</dd>
+                    <dt>代表取締役</dt>
+                    <dd>日本　太郎</dd>
+                    <dt>創業</dt>
+                    <dd>2025年1月</dd>
+                </dl>
+            </div>
+            <div class="about-pic">
+                <img src="img/MYROA - 0333.jpg" alt="" class="pic1">
+                <img src="img/MYROA - 0252.jpg" alt="" class="pic2">
+            </div>
+        </section>
+
+        <section id="entry">
+            <h3>お問い合わせ</h3>
+            <form action="#">
+                <dl class="contact-list">
+                    <dt><label for="name">お名前</label></dt>
+                    <dd><input type="text" id="name" name="your-name" required></dd>
+                    <dt><label for="name">フリガナ</label></dt>
+                    <dd><input type="text" id="kana" name="your-kana" required></dd>
+                    <dt><label for="title">件名</label></dt>
+                    <dd><input type="text" id="title" name="your-title" required></dd>
+                    <dt><label for="email">e-mail</label></dt>
+                    <dd><input type="email" id="email" name="your-email" required></dd>
+                    <dt class="textarea"><label for="message">お問い合わせ内容</label></dt>
+                    <dd><textarea name="your-message" id="message" required></textarea></dd>
+                </dl>
+                <div class="sub-mit">
+                    <button class="contact-btn" type="submit" id="#">送信</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p>&copy;IROA&nbsp;CO.,Ltd.2024</p>
+    </footer>
+
+    <!-- プラグイン「slick」のjsを読み込む -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

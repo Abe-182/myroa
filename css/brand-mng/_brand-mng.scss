@@ -1,0 +1,52 @@
+@use '../base/variables' as v;
+@use '../base/mixin' as mix;
+
+#introduction-sub{
+    margin: 100px 25%;
+    @include mix.tab{
+        margin: 20px 10%;
+    }
+    h2{
+    font-size: 28px;
+    text-align: center;
+    @include mix.tab{
+        font-size: 24px;
+        }
+    }
+    p{
+        font-size: 13px;
+        text-align: center;
+        font-family: 'Newsreader', serif; /* Newsreaderを全体に適用 */
+    }
+}
+.category-sub{
+    @include v.gradient-color;
+    .outer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10% 20%;
+        @include mix.tab{
+            flex-direction: column;
+            padding: 10% 10%;
+        }
+        img{
+            max-width: 280px;
+            height: 320px;
+            object-fit: cover;
+            @include mix.tab{
+                max-width: 380px;
+            }
+        }
+        p{
+            font-size: 30px;
+            font-family: 'Newsreader', serif; /* Newsreaderを全体に適用 */
+            margin-left: 55px;
+            @include mix.tab{
+                font-size: 18px;
+                margin-top: 20px;
+                margin-left: 0;
+            }
+        }
+    }
+}
