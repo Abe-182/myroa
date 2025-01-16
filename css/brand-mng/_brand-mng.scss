@@ -16,7 +16,7 @@
     p{
         font-size: 13px;
         text-align: center;
-        font-family: 'Newsreader', serif; /* Newsreaderを全体に適用 */
+        font-family: 'Newsreader',"Noto Serif JP", serif; /* Newsreaderを全体に適用 */
     }
 }
 .category-sub{
@@ -40,7 +40,7 @@
         }
         p{
             font-size: 30px;
-            font-family: 'Newsreader', serif; /* Newsreaderを全体に適用 */
+            font-family: 'Newsreader', "Noto Serif JP", serif; /* Newsreaderを全体に適用 */
             margin-left: 55px;
             @include mix.tab{
                 font-size: 18px;
