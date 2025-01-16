@@ -736,11 +736,11 @@ img {
 }
 
 h2 {
-  font-family: "Newsreader", "Shippori+Mincho", serif; /* Newsreaderを全体に適用 */
+  font-family: "Newsreader", "Shippori Mincho", serif; /* Newsreaderを全体に適用 */
 }
 
 #introduction p {
-  font-family: "Newsreader", "Shippori+Mincho", serif; /* Newsreaderを全体に適用 */
+  font-family: "Newsreader", "Shippori Mincho", serif; /* Newsreaderを全体に適用 */
 }
 
 .mainvisual {
