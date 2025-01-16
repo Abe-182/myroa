@@ -244,6 +244,7 @@
             }
             .contact-btn{
                 position: relative;
+                color: v.$font-color;
                 &::before {
                     position: absolute;
                     content: "";
@@ -251,7 +252,7 @@
                     top: 50%;
                     left: calc(100% + 20px);
                     width: 36px;
-                    height: 1px;            // margin-top: 6.4px;
+                    height: 1px;         
                     border-radius: 9999px;
                     background-color: v.$font-color;
                         }
